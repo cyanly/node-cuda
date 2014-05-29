@@ -38,6 +38,9 @@
           'variables': {
             'cuda_root%': '$(CUDA_PATH)'
           },
+          'cflags' : [
+            '/wd"4506"','/wd"4267"'
+          ],
           'libraries': [ 
             '-l<(cuda_root)/lib/<(arch)/cuda.lib',
           ],
