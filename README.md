@@ -17,3 +17,23 @@ To obtain and build the bindings:
 or install it via [npm](http://npmjs.org/):
 
     npm install node-cuda
+
+# Example
+
+```javascript
+var cu = require('cuda');
+
+//cuDriverGetVersion
+//cuDeviceGetCount
+console.log("Node-cuda exports:", cu);
+
+for (var i = 0; i < cu.deviceCount; i++) {
+    //cuDeviceGet
+    var cuDevice = new cu.Device(i);
+
+    //cuDeviceComputeCapability
+    //cuDeviceGetName
+    //cuDeviceTotalMem
+    console.log("Device " + i + ":", cuDevice);
+}
+````
